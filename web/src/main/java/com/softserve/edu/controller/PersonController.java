@@ -4,10 +4,11 @@ import com.softserve.edu.dto.PersonDTO;
 import com.softserve.edu.service.PersonService;
 import entity.Person;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/")
@@ -16,15 +17,32 @@ public class PersonController {
     @Autowired
     PersonService personService;
 
-    @RequestMapping(value = "{save-person}", method = RequestMethod.POST )
-    public PersonDTO getNewUser(@RequestBody PersonDTO personDTO) {
+    @RequestMapping(value = "{save-person}", method = RequestMethod.POST)
+    public PersonDTO saveNewUser(@RequestBody PersonDTO personDTO) {
         personService.save(
-                            new Person(
-                                    personDTO.getFirstName(),
-                                    personDTO.getLastName(),
-                                    personDTO.getDateOfBirth()
-                                    )
-                             );
+                new Person(
+                        personDTO.getFirstName(),
+                        personDTO.getLastName(),
+                        personDTO.getDateOfBirth()
+                )
+        );
         return personDTO;
+    }
+
+    @RequestMapping(value = "get-person/{id}", method = RequestMethod.GET)
+    public Person getUserById(@PathVariable("id") Integer id) {
+        return personService.findById(id);
+    }
+
+    @RequestMapping(value = "get-all-person", method = RequestMethod.GET)
+    public List<Person> getAllPerson() {
+        return personService.getAll();
+    }
+
+    @RequestMapping(value = "delete-person/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<HttpStatus> deletePersonById(@PathVariable("id") Integer id) {
+        personService.delete(id);
+
+        return new ResponseEntity<HttpStatus>(HttpStatus.OK);
     }
 }

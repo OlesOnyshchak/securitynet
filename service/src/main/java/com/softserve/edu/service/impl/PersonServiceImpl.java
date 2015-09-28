@@ -35,6 +35,6 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public void delete(int id) {
-
+       repository.delete(id);
     }
 }
