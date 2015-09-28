@@ -1,21 +1,20 @@
-<div class="col-sm-6 col-sm-offset-3 text-center">
-    <form ng-submit="savePerson(personInfo)" class="form-signin centered">
+<div class="col-md-12  text-center">
+    <form ng-submit="savePerson(personInfo)" class="centered">
 
-        <div>
-            <input placeholder="first name" class="form-control" ng-model="personInfo.firstName">
+        <div class="col-md-4">
+            <input type="text" placeholder="first name" class="form-control" ng-model="personInfo.firstName">
+        </div>
+        <div class="col-md-4">
+            <input type="text" placeholder="last name" class="form-control" ng-model="personInfo.lastName">
         </div>
 
-        <div>
-            <input placeholder="last name" class="form-control" ng-model="personInfo.lastName">
-        </div>
-
-        <div>
-            <input placeholder="date of birth" class="form-control" ng-model="personInfo.dateOfBirth">
+        <div class="col-md-4">
+            <input type="date" placeholder="date of birth" class="form-control" ng-model="personInfo.dateOfBirth">
         </div>
 
         <div class="text-center">
-            <button class="btn btn-success" type="submit" >
-                Sign up
+            <button class="btn btn-success" type="submit">
+                Save person
             </button>
         </div>
     </form>
