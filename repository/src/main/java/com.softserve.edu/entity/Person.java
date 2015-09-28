@@ -3,14 +3,25 @@ package entity;
 import java.util.Date;
 
 public class Person {
+    private int id;
     private String firstName;
     private String lastName;
-    private Date  dateOfBirth;
+    private Date dateOfBirth;
+
+    public Person(){}
 
     public Person(String firstName, String lastName, Date dateOfBirth) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {
