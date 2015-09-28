@@ -64,6 +64,7 @@ public class RepositoryImpl implements Repository {
 
             public Person mapRow(ResultSet result, int rowNum) throws SQLException {
                 Person person = new Person();
+                person.setId(result.getInt("id"));
                 person.setFirstName(result.getString("firstName"));
                 person.setLastName(result.getString("lastName"));
                 person.setDateOfBirth(result.getDate("dateOfBirth"));

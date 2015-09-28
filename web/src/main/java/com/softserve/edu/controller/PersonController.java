@@ -1,6 +1,5 @@
 package com.softserve.edu.controller;
 
-import com.softserve.edu.dto.PersonDTO;
 import com.softserve.edu.service.PersonService;
 import entity.Person;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,16 +16,11 @@ public class PersonController {
     @Autowired
     PersonService personService;
 
-    @RequestMapping(value = "{save-person}", method = RequestMethod.POST)
-    public PersonDTO saveNewUser(@RequestBody PersonDTO personDTO) {
-        personService.save(
-                new Person(
-                        personDTO.getFirstName(),
-                        personDTO.getLastName(),
-                        personDTO.getDateOfBirth()
-                )
-        );
-        return personDTO;
+    @RequestMapping(value = "save-person", method = RequestMethod.POST)
+    public ResponseEntity<HttpStatus> saveNewUser(@RequestBody Person person) {
+        personService.save(person);
+
+        return new ResponseEntity<HttpStatus>(HttpStatus.OK);
     }
 
     @RequestMapping(value = "get-person/{id}", method = RequestMethod.GET)
@@ -41,8 +35,8 @@ public class PersonController {
 
     @RequestMapping(value = "delete-person/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<HttpStatus> deletePersonById(@PathVariable("id") Integer id) {
-        personService.delete(id);
 
+        personService.delete(id);
         return new ResponseEntity<HttpStatus>(HttpStatus.OK);
     }
 }

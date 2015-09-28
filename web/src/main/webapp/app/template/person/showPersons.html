@@ -1,29 +1,14 @@
-<!doctype html>
-<html lang="en" ng-app="securitynet">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-    <script src="app/bower-components/angular/angular.js"></script>
-    <script src="app/bower-components/angular-bootstrap/ui-bootstrap.min.js"></script>
-    <script src="app/bower-components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-    <script src="app/js/app.js"></script>
-    <script src="app/js/controller/PersonController.js"></script>
-    <script src="app/js/controller/AddPersonController.js"></script>
-    <script src="app/js/service/PersonService.js"></script>
-
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
 <body>
 <div id="page-wrapper" ng-controller="PersonController">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header text-center">All Persons</h1>
+            <h1 class="page-header" style="color:white">All Persons</h1>
         </div>
     </div>
 
@@ -49,8 +34,8 @@
                                     <td>{{ person.lastName }}</td>
                                     <td>{{ person.dateOfBirth }}</td>
                                     <td>
-                                        <a ng-click="addPerson()"><i class="fa fa-plus"></i></a>
-                                        <a ng-click="deletePersonById(person.id)"><i class="fa fa-minus"></i></a>
+                                        <a ng-click="getAllPerson()"><i class="fa fa-plus"></i></a>
+                                        <i class="fa fa-minus"></i>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -63,5 +48,5 @@
     </div>
 </div>
 </body>
-</html>
 
+</html>

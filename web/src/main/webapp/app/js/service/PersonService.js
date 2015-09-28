@@ -7,25 +7,26 @@ angular.module('securitynet')
                     console.log("ok");
                 });
             },
-            get: function(id){
-                return $http.get('get-person/'+id).then(function(response){
+            get: function (id) {
+                return $http.get('get-person/' + id).then(function (response) {
                     return response.data;
                 });
             },
-            getAll: function(){
-                return $http.get('get-all-person').then(function(response){
+            getAll: function () {
+                return $http.get('get-all-person').then(function (response) {
                     return response.data;
                 });
             },
-            deletePerson: function(id){
-                return $http.delete('delete-person/'+id).then(function(response){
+            deletePerson: function (id) {
+                return $http.delete('delete-person/' + id).then(function (response) {
                     return response;
                 });
             },
-            update: function(reg){
-            return $http.put('update-person').then(function(response){
-                return response;
-            });
-        }
+            update: function (reg) {
+                return $http.put('update-person').then(function (response) {
+                    return response;
+                });
+            }
+
         }
     }]);
