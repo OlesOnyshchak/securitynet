@@ -1,7 +1,8 @@
 angular.module('securitynet',['ngRoute']).config(function($routeProvider){
     $routeProvider
-        .when('/',{
-            templateUrl:'app/templates/person/index.html',
+        .when('/add',{
+            templateUrl:'app/template/person/index.html',
             controller: 'PersonController'
-        });
+        })
+        .otherwise({ redirectTo: '/'});
 });
