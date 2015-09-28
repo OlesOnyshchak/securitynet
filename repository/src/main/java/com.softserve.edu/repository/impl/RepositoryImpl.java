@@ -1,19 +1,38 @@
 package repository.impl;
 
+
 import entity.Person;
+import org.springframework.jdbc.core.JdbcTemplate;
 import repository.Repository;
 
+import javax.sql.DataSource;
 import java.util.List;
 
-public class RepositoryImpl<T> implements Repository<T> {
+@org.springframework.stereotype.Repository
+public class RepositoryImpl implements Repository {
+
+    private JdbcTemplate jdbcTemplate;
+    private DataSource dataSource;
+
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     @Override
-    public void save(T entity) {
+    public void save(Person entity) {
+        String sql = "INSERT INTO securitynet.person " +
+        "(firstName, lastName, dateOfBirth) VALUES (?, ?, ?)";
+
+        jdbcTemplate = new JdbcTemplate(dataSource);
+
+        jdbcTemplate.update(sql, new Object[] { entity.getFirstName(),
+                entity.getLastName(), entity.getDateOfBirth()
+        });
 
     }
 
     @Override
-    public void update(T entity) {
+    public void update(entity.Person entity) {
 
     }
 

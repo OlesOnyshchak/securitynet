@@ -4,13 +4,13 @@ import entity.Person;
 
 import java.util.List;
 
-public interface Repository<T> {
-    void save(T entity);
+public interface Repository {
+    void save(Person entity);
 
-    void update(T entity);
+    void update(Person entity);
 
     Person findById(int id);
 
-    List<T> getAll();
+    List<Person> getAll();
 
 }
