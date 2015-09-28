@@ -10,7 +10,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan(basePackages = "com.softserve.edu.repository")
-@ImportResource(value = "application-context.xml")
+@ImportResource(value = "classpath:application-context.xml")
 public class PersistanceConfig {
 
     @Bean
