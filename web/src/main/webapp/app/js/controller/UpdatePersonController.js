@@ -4,14 +4,13 @@ angular
         function ($scope, $log, $modalInstance, PersonService, response) {
 
             $scope.person = response;
+            $scope.person.dateOfBirth = new Date(response.dateOfBirth);
 
             $scope.cancel = function () {
                 window.location.reload(true);
             };
 
             $scope.submit = function (personInfo) {
-                console.log(personInfo);
-                console.log(personInfo.firstName);
                 personInfo.dateOfBirth = personInfo.dateOfBirth;
                 if (!(personInfo.firstName == '' ||
                     personInfo.lastName == '' ||
