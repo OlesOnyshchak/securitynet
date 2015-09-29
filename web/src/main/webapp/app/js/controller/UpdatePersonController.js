@@ -15,6 +15,14 @@ angular
                     personInfo.lastName == '' ||
                     personInfo.dateOfBirth == ''))
                 {
+                    personInfo.firstName = personInfo.firstName
+                        .replace(/\d+/g, '')
+                        .replace(/\W/g, '');
+
+                    personInfo.lastName = personInfo.lastName
+                        .replace(/\d+/g, '')
+                        .replace(/\W/g, '');
+
                     PersonService.update(personInfo);
                     window.location.reload(true);
                 }
