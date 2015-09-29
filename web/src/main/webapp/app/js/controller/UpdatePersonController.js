@@ -9,7 +9,6 @@ angular
             $scope.cancel = function () {
                 window.location.reload(true);
             };
-
             $scope.submit = function (personInfo) {
                 personInfo.dateOfBirth = personInfo.dateOfBirth;
                 if (!(personInfo.firstName == '' ||

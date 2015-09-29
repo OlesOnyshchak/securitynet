@@ -7,7 +7,6 @@ angular
             $scope.cancel = function () {
                 window.location.reload(true);
             };
-
             $scope.submit = function () {
                 if (!($scope.person.firstName == 'undefined' ||
                     $scope.person.lastName == 'undefined' ||

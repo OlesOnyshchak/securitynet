@@ -32,7 +32,6 @@ angular.module('securitynet')
             });
         };
         $scope.updatePerson = function (personInfo) {
-            console.log(personInfo);
             var modalInstance = $modal.open({
                 animation: true,
                 templateUrl: 'app/template/person/updatePerson.html',
