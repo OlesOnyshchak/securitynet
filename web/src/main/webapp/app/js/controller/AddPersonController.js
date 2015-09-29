@@ -4,8 +4,11 @@ angular
         function ($scope, $log, $modalInstance, PersonService) {
             $scope.person = {};
 
+            $scope.cancel = function () {
+                window.location.reload(true);
+            };
+
             $scope.submit = function () {
-                $log.info($scope.person);
                 PersonService.save($scope.person);
                 window.location.reload(true);
             };
