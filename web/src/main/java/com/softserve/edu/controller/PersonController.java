@@ -19,7 +19,6 @@ public class PersonController {
     @RequestMapping(value = "save-person", method = RequestMethod.POST)
     public ResponseEntity<HttpStatus> saveNewUser(@RequestBody Person person) {
         personService.save(person);
-
         return new ResponseEntity<HttpStatus>(HttpStatus.OK);
     }
 

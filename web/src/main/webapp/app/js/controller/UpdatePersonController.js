@@ -10,11 +10,11 @@ angular
                 window.location.reload(true);
             };
             $scope.submit = function (personInfo) {
-                personInfo.dateOfBirth = personInfo.dateOfBirth;
                 if (!(personInfo.firstName == '' ||
                     personInfo.lastName == '' ||
                     personInfo.dateOfBirth == ''))
                 {
+                    var firstLetterPosition = 0;
                     personInfo.firstName = personInfo.firstName
                         .replace(/\d+/g, '')
                         .replace(/\W/g, '');
