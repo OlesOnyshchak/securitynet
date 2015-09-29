@@ -1,4 +1,4 @@
-<form class="form-group" ng-submit="submit()">
+<form class="form-group" ng-submit="submit(person)">
 
     <div class="modal-header">
         <h3 class="modal-title">Update Person</h3>
@@ -13,7 +13,7 @@
                 <input class="input-group" placeholder="Last Name" ng-model="person.lastName">
             </div>
             <div class="col-md-3 form-group col-md-offset-1">
-                <input class="input-group" type="date" placeholder="Date of birth" ng-model="person.dateOfBirth">
+                <input class="input-group"  placeholder="Date of birth" ng-model="person.dateOfBirth">
             </div>
         </div>
     </div>

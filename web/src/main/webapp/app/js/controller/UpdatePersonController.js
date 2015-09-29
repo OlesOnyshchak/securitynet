@@ -2,7 +2,6 @@ angular
     .module('securitynet')
     .controller('UpdatePersonController', ['$scope', '$log', '$modalInstance', 'PersonService', 'response',
         function ($scope, $log, $modalInstance, PersonService, response) {
-            console.log(response);
 
             $scope.person = response;
 
@@ -10,8 +9,9 @@ angular
                 window.location.reload(true);
             };
 
-            $scope.submit = function () {
-                PersonService.save($scope.person);
+            $scope.submit = function (personInfo) {
+                personInfo.dateOfBirth = personInfo.dateOfBirth;
+                PersonService.update(personInfo);
                 window.location.reload(true);
             };
         }]);

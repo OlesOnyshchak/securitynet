@@ -2,9 +2,7 @@ angular.module('securitynet')
     .factory("PersonService", ['$http', function PersonServiceFactory($http) {
         return {
             save: function (reg) {
-                console.log("ok");
                 return $http.post('save-person', reg).success(function (data) {
-                    console.log("ok");
                 });
             },
             get: function (id) {
@@ -22,8 +20,8 @@ angular.module('securitynet')
                     return response;
                 });
             },
-            update: function (reg) {
-                return $http.put('update-person').then(function (response) {
+            update: function (personInfo) {
+                return $http.put('update-person',personInfo).then(function (response) {
                     return response;
                 });
             }

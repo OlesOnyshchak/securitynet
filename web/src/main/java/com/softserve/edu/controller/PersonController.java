@@ -35,8 +35,13 @@ public class PersonController {
 
     @RequestMapping(value = "delete-person/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<HttpStatus> deletePersonById(@PathVariable("id") Integer id) {
-
         personService.delete(id);
+        return new ResponseEntity<HttpStatus>(HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "update-person", method = RequestMethod.PUT)
+    public ResponseEntity<HttpStatus> updatePerson(@RequestBody Person person) {
+        personService.update(person);
         return new ResponseEntity<HttpStatus>(HttpStatus.OK);
     }
 }
