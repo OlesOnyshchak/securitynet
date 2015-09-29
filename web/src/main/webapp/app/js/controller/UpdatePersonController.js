@@ -14,7 +14,6 @@ angular
                     personInfo.lastName == '' ||
                     personInfo.dateOfBirth == ''))
                 {
-                    var firstLetterPosition = 0;
                     personInfo.firstName = personInfo.firstName
                         .replace(/\d+/g, '')
                         .replace(/\W/g, '');
