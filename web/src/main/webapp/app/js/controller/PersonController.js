@@ -30,5 +30,19 @@ angular.module('securitynet')
                 controller: 'AddPersonController',
                 size: 'md'
             });
+        };
+        $scope.updatePerson = function (personInfo) {
+            console.log(personInfo);
+            var modalInstance = $modal.open({
+                animation: true,
+                templateUrl: 'app/template/person/updatePerson.html',
+                controller: 'UpdatePersonController',
+                size: 'md',
+                resolve: {
+                    response: function () {
+                        return personInfo;
+                    }
+                }
+            });
         }
     }]);

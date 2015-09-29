@@ -7,6 +7,7 @@
     <script src="app/bower-components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="app/js/app.js"></script>
     <script src="app/js/controller/PersonController.js"></script>
+    <script src="app/js/controller/UpdatePersonController.js"></script>
     <script src="app/js/controller/AddPersonController.js"></script>
     <script src="app/js/service/PersonService.js"></script>
 
@@ -51,7 +52,7 @@
                                     <td>
                                         <a ng-click="addPerson()"><i class="fa fa-plus"></i></a>
                                         <a ng-click="deletePersonById(person.id)"><i class="fa fa-minus"></i></a>
-                                        <a ng-click=""><i class="fa fa-pencil"></i></a>
+                                        <a ng-click="updatePerson(person)"><i class="fa fa-pencil"></i></a>
                                     </td>
                                 </tr>
                                 </tbody>

@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<form class="form-group" ng-submit="submit()">
 
-</body>
-</html>
+    <div class="modal-header">
+        <h3 class="modal-title">Update Person</h3>
+    </div>
+
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-3 form-group">
+                <input class="input-group" placeholder="First Name" ng-model="person.firstName">
+            </div>
+            <div class="col-md-3 form-group col-md-offset-1">
+                <input class="input-group" placeholder="Last Name" ng-model="person.lastName">
+            </div>
+            <div class="col-md-3 form-group col-md-offset-1">
+                <input class="input-group" type="date" placeholder="Date of birth" ng-model="person.dateOfBirth">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-footer form-group">
+        <button class="btn btn-success pull-left" type="submit">
+            Submit
+        </button>
+
+        <button class="btn btn-danger pull-right" type="button" ng-click="cancel()">
+            Cancel
+        </button>
+    </div>
+</form>
