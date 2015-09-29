@@ -10,8 +10,15 @@ angular
             };
 
             $scope.submit = function (personInfo) {
+                console.log(personInfo);
+                console.log(personInfo.firstName);
                 personInfo.dateOfBirth = personInfo.dateOfBirth;
-                PersonService.update(personInfo);
-                window.location.reload(true);
+                if (!(personInfo.firstName == '' ||
+                    personInfo.lastName == '' ||
+                    personInfo.dateOfBirth == ''))
+                {
+                    PersonService.update(personInfo);
+                    window.location.reload(true);
+                }
             };
         }]);

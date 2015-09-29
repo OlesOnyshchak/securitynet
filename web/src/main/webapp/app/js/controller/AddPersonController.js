@@ -9,11 +9,11 @@ angular
             };
 
             $scope.submit = function () {
-                PersonService.save($scope.person);
                 if (!($scope.person.firstName == 'undefined' ||
                     $scope.person.lastName == 'undefined' ||
                     $scope.person.dateOfBirth == 'undefined'))
                 {
+                    PersonService.save($scope.person);
                     window.location.reload(true);
                 }
             };
